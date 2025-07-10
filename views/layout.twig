@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{% block title %}عنوان الصفحة{% endblock %}</title>
+    <script type="module" src="https://unpkg.com/@salla.sa/twilight-components@latest/dist/index.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <link href="/assets/styles.css" rel="stylesheet">
+  </head>
+  <body class="bg-gray-50 font-sans">
+    <header class="bg-white border-b border-gray-200 p-4 flex justify-between items-center shadow-sm">
+      <h1 class="text-2xl font-bold text-pink-600">اسم المتجر</h1>
+      <nav class="flex gap-4 text-sm text-gray-700">
+        <a href="/" class="hover:text-pink-600">الرئيسية</a>
+        <a href="/categories" class="hover:text-pink-600">التصنيفات</a>
+        <a href="/offers" class="hover:text-pink-600">العروض</a>
+        <a href="/contact" class="hover:text-pink-600">تواصل معنا</a>
+      </nav>
+      <salla-cart-summary></salla-cart-summary>
+    </header>
+
+    {% block content %}{% endblock %}
+
+    <footer class="bg-gray-900 text-white text-sm py-6 px-4 mt-8 text-center">
+      جميع الحقوق محفوظة &copy; {{ store.name }} {{ current_year }}
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,37 @@
+{% extends "base" %}
+
+{% block content %}
+  <section class="my-6 text-center container mx-auto">
+    <img src="/assets/banner.jpg" alt="بنر رئيسي" class="mx-auto rounded-md shadow">
+  </section>
+
+  <section class="grid grid-cols-2 md:grid-cols-4 gap-4 px-4 my-6 container mx-auto">
+    {% for category in categories %}
+    <div class="bg-white text-center p-4 rounded-md shadow hover:shadow-lg transition">
+      <img src="{{ category.image }}" class="mx-auto mb-2 rounded-full w-24 h-24 object-cover" alt="{{ category.name }}">
+      <p class="font-semibold text-gray-800">{{ category.name }}</p>
+    </div>
+    {% endfor %}
+  </section>
+
+  <section class="px-4 my-8 container mx-auto">
+    <salla-section-title title="منتجات مميزة"></salla-section-title>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-4">
+      {% for product in products %}
+        <salla-product-card product-id="{{ product.id }}"></salla-product-card>
+      {% endfor %}
+    </div>
+  </section>
+
+  <section class="px-4 my-8 bg-pink-50 py-6 rounded-md container mx-auto">
+    <salla-section-title title="عروض لا تفوت"></salla-section-title>
+    <div class="flex justify-center mt-4">
+      <salla-countdown end-date="{{ store.offer_ends_at }}"></salla-countdown>
+    </div>
+  </section>
+
+  <section class="px-4 my-8 container mx-auto">
+    <salla-section-title title="ماذا قال عملاؤنا؟"></salla-section-title>
+    <salla-customer-reviews></salla-customer-reviews>
+  </section>
+{% endblock %}

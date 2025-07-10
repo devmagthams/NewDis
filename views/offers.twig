@@ -1,0 +1,14 @@
+{% extends "layout.twig" %}
+
+{% block title %}العروض{% endblock %}
+
+{% block content %}
+<section class="container mx-auto px-4 my-8">
+  <h1 class="text-xl font-bold mb-4">العروض الحالية</h1>
+  <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+    {% for product in offers %}
+      <salla-product-card product-id="{{ product.id }}"></salla-product-card>
+    {% endfor %}
+  </div>
+</section>
+{% endblock %}

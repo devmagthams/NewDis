@@ -1,0 +1,15 @@
+{% extends "layout.twig" %}
+
+{% block title %}تواصل معنا{% endblock %}
+
+{% block content %}
+<section class="container mx-auto px-4 my-8">
+  <h1 class="text-xl font-bold mb-4">تواصل معنا</h1>
+  <form class="grid gap-4 max-w-xl">
+    <input type="text" placeholder="الاسم" class="border p-2 rounded">
+    <input type="email" placeholder="البريد الإلكتروني" class="border p-2 rounded">
+    <textarea placeholder="رسالتك" class="border p-2 rounded h-32"></textarea>
+    <button class="bg-pink-600 text-white px-4 py-2 rounded">إرسال</button>
+  </form>
+</section>
+{% endblock %}
